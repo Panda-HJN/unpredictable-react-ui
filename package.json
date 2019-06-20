@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Panda-HJN/unpredictable-react-ui/issues"
   },
-  "homepage": "https://github.com/Panda-HJN/unpredictable-react-ui#readme"
+  "homepage": "https://github.com/Panda-HJN/unpredictable-react-ui#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.5.2",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.4"
+  }
 }
