@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../icons/code.svg';
+import './importAllSvg.js';
 interface IconProps {
     name: string
 }
