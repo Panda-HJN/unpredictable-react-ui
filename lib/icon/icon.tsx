@@ -21,10 +21,11 @@ interface IconProps extends React.SVGAttributes<SVGElement>  {
 // 显然 Icon 这个使用svg 的组件 需要 SVGAttributes
 // 所以 只需要让  IconProps  继承 SVGAttributes 就可以了
 const Icon:React.FunctionComponent<IconProps>=(props)=> {
+    const {className ,...restProps} = props
     return (
         <svg
-            className='unp-icon'
-            {...props}
+            className={`unp-icon ${className}`}
+            {...restProps}
         >
             <use xlinkHref={`#${props.type}`}/>
         </svg>)
