@@ -1,12 +1,12 @@
 import React from 'react';
 import './importAllSvg.js';
 interface IconProps {
-    name: string
+    type: string
 }
 const Icon:React.FunctionComponent<IconProps>=(props)=> {
     return (<span>
         <svg>
-            <use xlinkHref={`#${props.name}`}/>
+            <use xlinkHref={`#${props.type}`}/>
         </svg>
     </span>)
 };
