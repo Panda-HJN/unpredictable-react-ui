@@ -1,4 +1,5 @@
 import React from 'react';
+import classNameTool from '../Tools/classNameTool';
 import './importAllSvg.js';
 import './icon.scss';
 interface IconProps extends React.SVGAttributes<SVGElement>  {
@@ -24,7 +25,8 @@ const Icon:React.FunctionComponent<IconProps>=(props)=> {
     const {className ,...restProps} = props
     return (
         <svg
-            className={`unp-icon ${className}`}
+            //className={`unp-icon ${className}`}
+            className={classNameTool('unp-icon',className)}
             {...restProps}
         >
             <use xlinkHref={`#${props.type}`}/>
