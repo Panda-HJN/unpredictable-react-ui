@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon 的简单测试 渲染是否成功 1`] = `
+<svg
+  className="unp-icon"
+  name="code"
+>
+  <use
+    xlinkHref="#undefined"
+  />
+</svg>
+`;

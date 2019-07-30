@@ -32,7 +32,8 @@ const Icon: React.FunctionComponent<IconProps> =
                 {...restProps}
             >
                 <use xlinkHref={`#${type}`}/>
-            </svg>);
+            </svg>
+            );
     };
 
 export default Icon;
