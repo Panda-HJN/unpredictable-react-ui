@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="8" failures="0" time="8.664">
+  <testsuite name="icon 的简单测试" errors="0" failures="0" skipped="0" timestamp="2019-07-31T07:13:08" time="5.37" tests="1">
+    <testcase classname="icon 的简单测试 渲染是否成功" name="icon 的简单测试 渲染是否成功" time="0.018">
+    </testcase>
+  </testsuite>
+  <testsuite name="Button 的简单测试" errors="0" failures="0" skipped="0" timestamp="2019-07-31T07:13:13" time="0.483" tests="1">
+    <testcase classname="Button 的简单测试 渲染是否成功" name="Button 的简单测试 渲染是否成功" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="classNameTool" errors="0" failures="0" skipped="0" timestamp="2019-07-31T07:13:14" time="0.561" tests="6">
+    <testcase classname="classNameTool 接受一个 className cat" name="classNameTool 接受一个 className cat" time="0.003">
+    </testcase>
+    <testcase classname="classNameTool 接受2个 className cat dog" name="classNameTool 接受2个 className cat dog" time="0.001">
+    </testcase>
+    <testcase classname="classNameTool 接受多个 className" name="classNameTool 接受多个 className" time="0">
+    </testcase>
+    <testcase classname="classNameTool 接受 cat null" name="classNameTool 接受 cat null" time="0.001">
+    </testcase>
+    <testcase classname="classNameTool 接受 cat 和空格字符串 " name="classNameTool 接受 cat 和空格字符串 " time="0">
+    </testcase>
+    <testcase classname="classNameTool 接受 cat 和 undefined " name="classNameTool 接受 cat 和 undefined " time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
