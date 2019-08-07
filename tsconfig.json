@@ -22,7 +22,9 @@
     "esModuleInterop": true,
     "noUnusedLocals": true
   },
+  //  tslint 只会去分析 include 所指示的范围
   "include": [
+    "lib/**/*"
   ],
   "exclude": [
     "node_modules",
