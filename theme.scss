@@ -1,0 +1,29 @@
+// theme clolor define
+// $primaryColor
+$primaryColor-L1: #0288D1;
+$primaryColor-L2: #039BE5;
+$primaryColor-L3: #03A9F4;
+$primaryColor-L4: #29B6F6;
+$primaryColor-L5: #4FC3F7;
+
+$dangerColor-L1: #d32f2f;
+$dangerColor-L2: #e53935;
+$dangerColor-L3: #f44336;
+$dangerColor-L4: #ef5350;
+$dangerColor-L5: #e57373;
+
+$warningColor-L1: #FFA000;
+$warningColor-L2: #FFB300;
+$warningColor-L3: #FFC107;
+$warningColor-L4: #FFCA28;
+$warningColor-L5: #FFD54F;
+
+$bgColor1: #F5F5F5;
+$bgColor2: #e53935;
+$bgColor3: #f44336;
+$bgColor4: #ef5350;
+$bgColor5: #e57373;
+// 主题颜色管理应该有如下功能
+// 设定primaryColor
+// 自动得到相应的$primaryColor-L1 L2 L3 L4 L5 L6
+// RGB HEX HLS 三种颜色方式的互相换算
