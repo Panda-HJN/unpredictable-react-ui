@@ -13,8 +13,9 @@ const Modal: React.FunctionComponent<Props> = (props) => {
             <div className='und-modal'>
                 <header>
                     title
-                    <div className="closeBtn">x</div>
                 </header>
+                {/*closeBtn不应该放进header里 放进去就暗示着 想有closeBtn就必须有header*/}
+                <div className="closeBtn">x</div>
                 <main>
                     {children}
                 </main>
