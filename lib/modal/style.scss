@@ -1,0 +1,21 @@
+@import '../../theme.scss';
+.und-modal{
+  position: fixed;
+  width: 10em;
+  height: 10em;
+  border-radius: 4px;
+  background: $bgColor1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  &-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: fade_out(#000,0.5);
+  }
+}
