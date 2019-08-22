@@ -6,6 +6,7 @@ export default function () {
         <div onClick={()=>changeVisible(!visible)}>点我</div>
         <Modal
             visible={visible}
+            title='Title'
         >
             111
         </Modal>

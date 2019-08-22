@@ -7,7 +7,7 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
     type: string;
     //onClick:(e:React.MouseEvent)=>void
     // 改为默认的鼠标事件处理函数
-    onClick: React.MouseEventHandler<SVGElement>
+    onClick?: React.MouseEventHandler<SVGElement>
 }
 
 // 为了让 IconProps 能支持更多的事件
