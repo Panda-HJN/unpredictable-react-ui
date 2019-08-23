@@ -1,15 +1,47 @@
 import React, {useState} from 'react';
 import Modal from './modal'
 export default function () {
-    const [visible,changeVisible]=useState(false);
+    const [visible1,changeVisible1]=useState(false);
+    const [visible2,changeVisible2]=useState(false);
+    const [visible3,changeVisible3]=useState(false);
     return <div>
-        <div onClick={()=>changeVisible(!visible)}>点我</div>
+        <div onClick={()=>changeVisible1(!visible1)}>一号</div>
+        <div onClick={()=>changeVisible2(!visible2)}>二号</div>
+        <div onClick={()=>changeVisible3(!visible3)}>三号</div>
         <Modal
-            visible={visible}
-            title='Title'
+            visible={visible1}
+            closeOnClickMask
+            onCancel={()=>changeVisible1(false)}
+            title='Title111'
         >
             111
+        </Modal>
+        <Modal
+            visible={visible2}
+            onCancel={()=>changeVisible2(false)}
+            title='Title222'
+        >
+            222
+        </Modal>
+        <Modal
+            visible={visible3}
+            onCancel={()=>changeVisible3(false)}
+            title='Title333'
+        >
+            333
         </Modal>
     </div>;
 }
 
+// z-index 应该做好管理
+//
+// 根据各模块性质做好z-index 数值划分
+
+// 例如
+ // 背景区  1~5
+// 内容 10~29
+// 菜单  50~69
+// modal 100~120
+// 广告   150~170
+// 区和区之间留下间隙 方便后面有新的类别
+// 总的来说 数值越少 越好  对后续维护越友好
