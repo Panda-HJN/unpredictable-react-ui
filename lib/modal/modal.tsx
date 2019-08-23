@@ -12,6 +12,13 @@ interface Props {
     closeOnClickMask?: Boolean;
     footer?: ReactElement;
 }
+// confirm warning error
+interface alertProps {
+    content?:string;
+    icon?:ReactElement;
+    onCancel: React.MouseEventHandler;
+    onOk?: React.MouseEventHandler;
+}
 
 const Modal: React.FunctionComponent<Props> = (props) => {
     const {visible,title,closeOnClickMask,children,onCancel} = props;
@@ -37,7 +44,7 @@ const Modal: React.FunctionComponent<Props> = (props) => {
                     <button>1</button>
                     <button>2</button>
                 </footer>
-            </div>
+            </div>r44
         </Fragment>;
     // 显然 modal 这种 mask 会占满全屏的的东西 要丢到body 下
     return ReactDOM.createPortal(result,document.body)
@@ -45,4 +52,6 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 Modal.defaultProps = {
     closeOnClickMask: false
 };
+
+//export {warning, confirm, error};
 export default Modal;
