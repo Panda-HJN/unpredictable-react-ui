@@ -18,6 +18,9 @@
     height: 100%;
     background: fade_out(#000, 0.5);
   }
+  &-mask-invisible{
+    background: transparent;
+  }
   &-header {
     height: 4em;
     padding: .5em 1em;
@@ -37,6 +40,7 @@
     justify-content: center;
     align-items: center;
     color: #fff;
+    cursor: pointer;
   }
   &-main {
     padding: 1em;

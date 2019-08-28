@@ -1,36 +1,42 @@
 import React, {useState} from 'react';
-import Modal from './modal'
+import Modal from './modal';
+
 export default function () {
-    const [visible1,changeVisible1]=useState(false);
-    const [visible2,changeVisible2]=useState(false);
-    const [visible3,changeVisible3]=useState(false);
-    return <div>
-        <div onClick={()=>changeVisible1(!visible1)}>一号</div>
-        <div onClick={()=>changeVisible2(!visible2)}>二号</div>
-        <div onClick={()=>changeVisible3(!visible3)}>三号</div>
-        <Modal
-            visible={visible1}
-            closeOnClickMask
-            onCancel={()=>changeVisible1(false)}
-            title='Title111'
-        >
-            111
-        </Modal>
-        <Modal
-            visible={visible2}
-            onCancel={()=>changeVisible2(false)}
-            title='Title222'
-        >
-            222
-        </Modal>
-        <Modal
-            visible={visible3}
-            onCancel={()=>changeVisible3(false)}
-            title='Title333'
-        >
-            333
-        </Modal>
-    </div>;
+    const [visible1, changeVisible1] = useState(false);
+    const [visible2, changeVisible2] = useState(false);
+    const [visible3, changeVisible3] = useState(false);
+    return (
+        <div>
+            <div onClick={() => changeVisible1(!visible1)}>一号</div>
+            <div onClick={() => changeVisible2(!visible2)}>二号</div>
+            <div onClick={() => changeVisible3(!visible3)}>三号</div>
+            <Modal
+                visible={visible1}
+                closeOnClickMask
+                onNo={() => changeVisible1(false)}
+                title='Title111'
+            >
+                111
+            </Modal>
+            <Modal
+                visible={visible2}
+                maskInvisible
+                onNo={() => changeVisible2(false)}
+                title='Title222'
+                yesText='我看行'
+                noText='我觉得不行'
+            >
+                222
+            </Modal>
+            <Modal
+                visible={visible3}
+                onNo={() => changeVisible3(false)}
+                title='Title333'
+            >
+                333
+            </Modal>
+        </div>
+    );
 }
 
 // z-index 应该做好管理
@@ -38,7 +44,7 @@ export default function () {
 // 根据各模块性质做好z-index 数值划分
 
 // 例如
- // 背景区  1~5
+// 背景区  1~5
 // 内容 10~29
 // 菜单  50~69
 // modal 100~120
