@@ -6,6 +6,7 @@ import './style.scss';
 
 interface Props {
     visible: boolean;
+    width: number|string;
     title?: string;
     onNo: React.MouseEventHandler;
     onYes?: React.MouseEventHandler;
@@ -16,6 +17,7 @@ interface Props {
     // mask 是否透明
     maskInvisible?: boolean;
     footer?: boolean;
+    header?: boolean;
     //
     buttons?: Array<ReactElement>;
 }
@@ -24,7 +26,7 @@ const c = classNamePrefix('und-modal');
 
 const Modal: React.FunctionComponent<Props> = (props) => {
     const {
-        visible, title, footer, children,
+        visible, title, footer, children,header,width,
         closeOnClickMask, maskInvisible,
         buttons, noText, yesText, onNo, onYes
     } = props;
@@ -33,7 +35,7 @@ const Modal: React.FunctionComponent<Props> = (props) => {
             onNo(e);
         }
     };
-    const renderFooter = <footer className={c('footer ')}>
+    const renderFooter = <footer className={c('footer')}>
         {
             buttons && buttons.length ? buttons.map((btn, index) => {React.cloneElement(btn, {key: index});}) :
                 <Fragment>
@@ -42,14 +44,21 @@ const Modal: React.FunctionComponent<Props> = (props) => {
                 </Fragment>
         }
     </footer>;
+    const onKeyDown = (e:any)=>{
+        console.log('````')
+        console.log(e)
+    }
     const result = visible &&
         <Fragment>
             <div className={maskInvisible ? c(['mask' ,`mask-invisible`]): c(`mask`)} onClick={onClickMask}/>
-            <div className='und-modal'>
-                <header className={c('header')}>
-                    {title}
-                    <div className={c('close-icon')}><Icon type='close' onClick={onNo}/></div>
-                </header>
+            <div className='und-modal' style={{width}} onKeyDown={onKeyDown}>
+                {
+                    header&&
+                    (<header className={c('header')}>
+                        {title}
+                        <div className={c('close-icon')}><Icon type='close' onClick={onNo}/></div>
+                    </header>)
+                }
                 {/*closeBtn不应该放进header里 放进去就暗示着 想有closeBtn就必须有header*/}
                 <main className={c('main')}>
                     {children}
@@ -64,6 +73,8 @@ Modal.defaultProps = {
     closeOnClickMask: true,
     maskInvisible: false,
     footer: true,
+    header: true,
+    width: 360,
 };
 
 //export {warning, confirm, error};

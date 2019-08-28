@@ -12,7 +12,9 @@ export default function () {
             <div onClick={() => changeVisible3(!visible3)}>三号</div>
             <Modal
                 visible={visible1}
-                closeOnClickMask
+                closeOnClickMask={false}
+                header={false}
+                footer={false}
                 onNo={() => changeVisible1(false)}
                 title='Title111'
             >
