@@ -2,9 +2,7 @@
 
 .und-modal {
   position: fixed;
-  width: 30em;
   border-radius: 4px;
-  background: #fff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -27,6 +25,8 @@
     background: $primaryColor-L1;
     color: #fff;
     line-height: 3em;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
   &-close-icon {
     position: absolute;
@@ -44,12 +44,15 @@
   }
   &-main {
     padding: 1em;
+    background: #fff;
   }
   &-footer {
     display: flex;
     justify-content: flex-end;
     padding: 1em;
     background: $bgColor1;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
     button{
       margin-left: .5em;
       &:nth-child(1){
