@@ -15,7 +15,7 @@ export default function () {
                 closeOnClickMask={false}
                 header={false}
                 footer={false}
-                onNo={() => changeVisible1(false)}
+                onNo={() => changeVisible1( false)}
                 title='Title111'
             >
                 111
