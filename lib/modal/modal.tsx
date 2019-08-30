@@ -9,10 +9,10 @@ interface Props {
     width?: number | string;
     title?: string;
     onNo:() => void;
-    onYes?: () => void;
+    onYes?: () => void|undefined;
     noText?: string;
     yesText?: string;
-    // 点击mask 是否关闭f
+    // 点击mask 是否关闭
     closeOnClickMask?: boolean;
     // mask 是否透明
     maskInvisible?: boolean;
@@ -31,27 +31,33 @@ const Modal: React.FunctionComponent<Props> = (props) => {
         buttons, noText, yesText, onNo, onYes
     } = props;
 
-
-    const handleEsc = (e: KeyboardEvent) => {
-        const key = e.key;
-        if (key === 'Escape' || key === 'Esc') {
-            onNo()
-        }
-    };
     const onClickMask = (e: React.MouseEvent<Element, MouseEvent>) => {
         if (closeOnClickMask) {
             onNo();
         }
     };
-    const onKeyUpNo = (e: KeyboardEvent) => {
+    // 这里要注意
+    // handleEsc 是用在原生dom 上的
+    // 收到的是原生的 KeyboardEvent
+
+    // handleNo  handleYes 是绑定在 React Node 上的/
+    // 它的 e 其实是 一个 react 包装过的 KeyboardEvent
+    // 所以声明为 e:React.KeyboardEvent
+    const handleEsc = (e: KeyboardEvent) => {
         const key = e.key;
-        if (key === 'Enter' || key === 'enter') {
-            onYes()
+        if (key === 'Escape' || key === 'Esc'||key === 'esc') {
+            e.preventDefault();
+            onNo()
         }
     };
-    const onKeyUpYes = (e: KeyboardEvent) => {
-        if (e.key === 'Escape' || e.key === 'Esc') {
+    const handleNo = (e:React.KeyboardEvent) => {
+        if (e.key === 'Enter'||e.key === 'enter') {
             onNo()
+        }
+    };
+    const handleYes = (e:React.KeyboardEvent) => {
+        if (e.key === 'Enter'||e.key === 'enter') {
+            onYes&&onYes()
         }
     };
     const renderFooter = <footer className={c('footer')}>
@@ -60,8 +66,8 @@ const Modal: React.FunctionComponent<Props> = (props) => {
                     React.cloneElement(btn, {key: index});
                 }) :
                 <Fragment>
-                    <button onClick={onNo}  onKeyUp={onKeyUpNo}>{noText || 'no'}</button>
-                    <button onClick={onYes} onKeyUp={onKeyUpYes}>{yesText || 'yes'}</button>
+                    <button onClick={onNo}  onKeyUp={handleNo}>{noText || 'no'}</button>
+                    <button onClick={onYes} onKeyUp={handleYes}>{yesText || 'yes'}</button>
                 </Fragment>
         }
     </footer>;
@@ -104,6 +110,7 @@ Modal.defaultProps = {
     maskInvisible: false,
     footer: true,
     header: true,
+    onYes: ()=>{},
     width: 360,
 };
 
