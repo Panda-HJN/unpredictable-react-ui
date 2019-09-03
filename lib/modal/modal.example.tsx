@@ -1,15 +1,25 @@
 import React, {useState} from 'react';
-import Modal from './modal';
+import Modal,{confirm} from './modal';
 
 export default function () {
     const [visible1, changeVisible1] = useState(false);
     const [visible2, changeVisible2] = useState(false);
     const [visible3, changeVisible3] = useState(false);
+    const showAConfirm = ()=>{
+        confirm({
+            title:'Title',
+            content:'内容内容',
+            onYes:()=>{
+                console.log('afterClose')
+            }
+        })
+    }
     return (
         <div>
             <div onClick={() => changeVisible1(!visible1)}>一号</div>
             <div onClick={() => changeVisible2(!visible2)}>二号</div>
             <div onClick={() => changeVisible3(!visible3)}>三号</div>
+            <div onClick={showAConfirm}>confirm</div>
             <Modal
                 visible={visible1}
                 closeOnClickMask={false}
