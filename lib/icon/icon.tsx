@@ -1,5 +1,5 @@
 import React from 'react';
-import classNameTool from '../Tools/classNameTool';
+import {joinBySpace} from '../Tools/strTool';
 import './importAllSvg.js';
 import './icon.scss';
 
@@ -28,7 +28,7 @@ const Icon: React.FunctionComponent<IconProps> =
         return (
             <svg
                 //className={`unp-icon ${className}`}
-                className={classNameTool('unp-icon', className)}
+                className={joinBySpace('unp-icon', className)}
                 {...restProps}
             >
                 <use xlinkHref={`#${type}`}/>
