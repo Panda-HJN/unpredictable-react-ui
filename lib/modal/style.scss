@@ -63,7 +63,19 @@
   }
 }
 .und-alert{
-  footer{
+  &-main{
+
+  }
+  &-title{
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    color: $fontColor-primary;
+  }
+  &-content{
+    color: $fontColor-secondary;
+  }
+  &-footer{
     background: #fff;
   }
 }

@@ -105,15 +105,15 @@ const Modal: React.FunctionComponent<Props> = (props) => {
                 <div className={className?joinBySpace('und-modal',className):'und-modal'} style={{width}}>
                 {
                     header &&
-                    (<header className={modalC('header')}>
+                    (<div className={modalC('header')}>
                         {title}
                         <div className={modalC('close-icon')}><Icon type='close' onClick={onNo}/></div>
-                    </header>)
+                    </div>)
                 }
                 {/*closeBtn不应该放进header里 放进去就暗示着 想有closeBtn就必须有header*/}
-                <main className={joinBySpace(modalC(['main']))}>
+                <div className={joinBySpace(modalC(['main']))}>
                     {children}
-                </main>
+                </div>
                 {footer ? renderFooter(onNo,onYes,buttons,noText,yesText) : null}
             </div>
         </Fragment>;
@@ -141,7 +141,7 @@ const confirm = function (config: AlertProps) {
     const mainNode = (
         <div className={alertC('main')}>
             {title ? <div className={alertC('title')}>
-                <Icon type='code'/>
+                <Icon type='warning'/>
                 {title}
             </div> : null}
             {content ? <div className={alertC('content')}>{content}</div> : null}
