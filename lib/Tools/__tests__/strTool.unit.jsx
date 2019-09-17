@@ -1,4 +1,4 @@
-import joinBySpace from '../strTool';
+import {joinBySpace} from '../strTool';
 
 describe(joinBySpace, () => {
     it('接受一个 className cat', function () {
